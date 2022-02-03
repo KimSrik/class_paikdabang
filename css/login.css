@@ -1,0 +1,115 @@
+@charset 'utf-8';
+
+.login{
+    display: none;
+}
+.login h2{
+    margin: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+.login h2 i{
+    color: #071f60;
+}
+.login form{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:80%;
+    max-width: 540px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding:40px 24px 24px;
+    border-radius:10px;
+    background:#fff;
+}
+.login form>div>input, .login form>div>label{
+    width: 100%;
+}
+.input01, .input02{
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: transparent;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 12px 24px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+.input01 input, .input02 input{
+    margin-left: 12px;
+    font-weight: 500;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+.input01 input::placeholder, .input02 input::placeholder{
+    color: #999;
+}
+.input02{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.input03 input, .input04 input{
+    margin: 6px 0;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 12px;
+    border-radius: 6px;
+    background-color: #ffff00;
+
+    font-weight: 700;
+    font-size: 20px;
+    color: #071f60;
+}
+.input05{
+    margin: 10px 24px;
+}
+.input05 input{
+    display: none;
+    /* margin-right: 5px; */
+}
+.chk-id{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    position: relative;
+}
+
+.chk-id .line01, .chk-id .line02{
+    width: 8px;
+    height: 2px;
+    position: absolute;
+    left: 10%;
+    top: 60%;
+    transform: rotate(45deg);
+}
+.chk-id .line02{
+    width: 10px;
+    left: 41%;
+    top: 49%;
+    transform: rotate(-45deg);
+}
+.chk-id .line01::before, .chk-id .line02::before{
+    content: '';
+    display: block;
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    transition: 0.3s;
+}
+.chk-id .line02::before{
+    transition: 0.3s 0.3s;
+}
+#save-id:checked + .chk-id{
+    background-color: #071f60;
+    border-color: transparent;
+}
+#save-id:checked + .chk-id .line01::before,
+#save-id:checked + .chk-id .line02::before{
+    width: 100%;
+}
