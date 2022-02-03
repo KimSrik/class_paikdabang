@@ -27,73 +27,134 @@
     <link rel="stylesheet" href="./css/mobile.min.css">
     <link rel="stylesheet" href="./css/tablet.min.css">
     <link rel="stylesheet" href="./css/desktop.min.css">
-    
-
     <style>
         .wrap{
-            height: 100vh;
+            height:100vh;
         }
         .popup-par{
-            position: fixed;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
+            position:fixed;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            z-index:10001;
         }
         .popup{
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            z-index: 10001;
-            padding: 30px 16px 16px 16px;
-            border-radius: 16px;
-            background-color: #fff;
-            /* display: none; */
+            position:fixed;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+            z-index:10001;
+
+            width:300px;
+            padding:30px 16px 16px 16px;
+            border-radius:16px;
+            background-color:#fff;
         }
         .btn-close{
-            position: absolute;
-            right: -15px;
-            top: -15px;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: black;
-            cursor: pointer;
+            position:absolute;
+            right:-15px;
+            top:-15px;
+            width:40px;
+            height:40px;
+            border-radius:50%;
+            background-color:#000;
+            cursor:pointer;
         }
         .btn-close::before, .btn-close::after{
-            position: absolute;
-            left: 50%;
-            top: 50%;
-
-            content: '';
-            display: block;
-            width: 24px;
-            height: 4px;
+            position:absolute;
+            left:50%;
+            top:50%;
+            content:'';
+            display:block;
+            width:24px;
+            height:4px;
             border-radius: 2px;
-            background-color: #fff;
+            background-color:#fff;            
         }
         .btn-close::before{
-            transform: translate(-50%, -50%) rotate(45deg);
+            transform:translate(-50%,-50%) rotate(45deg);
         }
         .btn-close::after{
-            transform: translate(-50%, -50%) rotate(-45deg);
+            transform:translate(-50%,-50%) rotate(-45deg);
         }
-        .popup-main{
-            
-            border-radius: 16px;
-            overflow: hidden;
+        .popup-main{            
+            border-radius:16px;
+            overflow:hidden;
         }
         .chk-box{
-            position: absolute;
-            left: 16px;
-            bottom: -30px;
+            position:absolute;
+            left:16px;
+            bottom:-30px;
         }
+        .login h2{
+            margin: 20px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .login h2 i{
+            color: #071f60;
+        }
+        .login form{
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+            width:80%;
+            max-width: 540px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            padding:40px 24px 24px;
+            border-radius:10px;
+            background:#fff;
+        }
+        .login form>div>input, .login form>div>label{
+            width: 100%;
+        }
+        .input01, .input02{
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-bottom: transparent;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            padding: 12px 24px;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+        }
+        .input01 input, .input02 input{
+            margin-left: 12px;
+            font-weight: 500;
+            font-size: 20px;
+            border: none;
+            outline: none;
+        }
+        .input01 input::placeholder, .input02 input::placeholder{
+            color: #999;
+        }
+        .input02{
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+        .input03 input, .input04 input{
+            margin: 12px 0;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            padding: 12px;
+            border-radius: 6px;
+            background-color: #ffff00;
 
-
+            font-weight: 500;
+            font-size: 20px;
+            color: #071f60;
+        }
+        .input05{
+            margin: 10px 24px;
+        }
+        .input05 input{
+            margin-right: 5px;
+        }
     </style>
-
 </head>
 <body>
     <section class="skip-menu">
@@ -101,24 +162,50 @@
         <a href="#">메뉴2</a>
         <a href="#">메뉴3</a>
     </section>
-
-    <section class="popup">
-        <div class="btn-close"></div>
-        <div class="popup-main">
-            <div class="img-box">
-                <a href="#">
-                    <img src="./images/mmain-banner01.jpg" alt="콜드브루">
-                </a>
+    <section class="popup-par" style="display:none;">
+        <section class="popup">
+            <div class="btn-close"></div>
+            <div class="popup-main">
+                <div class="img-box">
+                    <a href="#">
+                        <img src="./images/mmain-banner01.jpg" alt="콜드블루">
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="chk-box">
-            <label>
-                <input type="checkbox">
-                24시간 열지 않음
-            </label>
-        </div>
+            <div class="chk-box">
+                <label>
+                    <input type="checkbox">
+                    24시간 열지 않음
+                </label>
+            </div>
+        </section>
     </section>
-
+    <div class="login" style="position:fixed;left:0;right:0;top:0;bottom:0;z-index:10001;">
+        <form>
+            <h2>
+                <i class="fas fa-sign-in-alt"></i>
+                ID 로그인
+            </h2>
+            <div class="input01">
+                <i class="far fa-user"></i>
+                <input type="text" id="user-id" placeholder="아이디">
+            </div>
+            <div class="input02">
+                <i class="fas fa-unlock-alt"></i>
+                <input type="password" id="user-pass" placeholder="패스워드">
+            </div>
+            <div class="input05">
+                <label><input type="checkbox" id="save-id">ID 저장</label>
+            </div>
+            <div class="input03">
+                <input type="submit" value="로그인" id="btn-send">
+            </div>     
+            <div class="input04">
+                <input type="reset" value="취소" id="btn-reset">
+            </div>
+                   
+        </form>
+    </div>
     <section class="wrap">
         <header class="header">
             <div class="container">
@@ -128,6 +215,7 @@
                     </div>
                     <div class="h-right">
                         <ul class="sm-nav">
+                            <li><a href="#">로그인</a></li>
                             <li><a href="#">더본코리아</a></li>
                             <li><a href="#">매장찾기</a></li>
                             <li class="ico-sns"><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -472,47 +560,64 @@
 
     <!-- jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- jQuery cookie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- bxslider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js" integrity="sha512-p55Bpm5gf7tvTsmkwyszUe4oVMwxJMoff7Jq3J/oHaBk+tNQvDKNz9/gLxn9vyCjgd6SAoqLnL13fnuZzCYAUA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./js/rsp-menu.min.js"></script>
     <script src="./js/f-site.min.js"></script>
-    <script>         
+    <script>        
         $('.slider').bxSlider();
-
+        
+        //모달 닫기
         $('.btn-close').on({
             'click':function(){
-                $('.popup').css({
-                    'display':'none',
-                })
-                $('.wrap').css({
-                    'height': 'auto',
-                })
+                $('.popup-par').css('display','none');
+                $('.wrap').css('height','auto');
                 if($('.chk-box input').is(':checked')){
-                    document.cookie = 'popup=n;expires=2022-02-01 12:00:00';
+                    // 오늘날짜
+                    // let nowDate = new Date();                    
+                    // 오늘일
+                    // let nowDay = nowDate.getDate();                    
+                    // 끝날짜
+                    // let endDate = new Date(nowDate.setDate(nowDay+1))
+                    // document.cookie = 'popup=n;expires='+ endDate +';';
+                    $.cookie('modal-popup', 'no', { expires: 1 });
                 }
             }
         })
 
-        if(document.cookie == 'popup=n'){
-            $('.popup').css({
-                'display':'none',
-            })
-        }
+        // login 닫기
+        $('#btn-reset').on({
+            'click':function(){
+                $('.login').css('display','none');
+            }
+        })
 
-        let date = new Date();
-        let nowYear = date.getFullYear();
-        let nowMonth = date.getMonth();
-        let nowDay = date.getDate();
+        console.log($.cookie('save-id'));
+        console.log($('#user-id').val($.cookie('save-id')));
 
-        let nowDate = date.setDate(date.getDate()+1);
+        if($.cookie('modal-popup') == 'no'){
+            $('.wrap').css('height','auto');
+        }else{
+            $('.popup-par').css('display','block');
+        }             
         
-        
-        
-       
-        date.setDate(date.getDate()+0);
-        console.log(date);
+        $('#btn-send').on({
+            'click':function(){
+                if($('#save-id').is(':checked')){
+                    let uId = $('#user-id').val();
+                    $.cookie('user-id',uId);
+                }else{
+                    $.removeCookie('user-id')
+                }
+                $('.login').css('display','none');
+                return false;
+            }
+        })
 
 
+        $('#user-id').val($.cookie('user-id'));
     </script>
 </body>
 </html>
