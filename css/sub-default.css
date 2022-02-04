@@ -50,12 +50,33 @@
     background-color:#ff0;  
 }
 
+.sub-bottom{
+    padding: 100px 0;
+}
+.sub-bottom h2{
+    font-weight: 700;
+    font-size: 42px;
+    color: #071f60;
+    text-align: center;
+}
+.sub-bottom h2::after{
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    margin: 15px auto;
+    background-color: #071f60;
+}
+
+
+
+
 @media (min-width:960px){
     .btn-sub{
         width:80%;
     }
     .btn-sub ul li{
-        width:33.3333%;
+        width:20%;
         border:1px solid rgba(0,0,0,0.3); 
         border-right:none;
     }
