@@ -1,0 +1,17 @@
+<div id="notice01">
+    <h2 id="notice-tit">소식</h2>
+    <hr>
+    <p id="notice-txt">다양한 이벤트와 새로운 소식을 확인하세요!</p>
+</div>
+
+<div id="notice02">
+    <h2 id="notice-tit">이벤트</h2>
+    <hr>
+    <p id="notice-txt">다양한 이벤트를 확인하세요!</p>
+</div>
+
+<div id="notice03">
+    <h2 id="notice-tit">친절우수매장</h2>
+    <hr>
+    <p id="notice-txt">이달의 친절우수매장을 방문해보세요!</p>
+</div>
