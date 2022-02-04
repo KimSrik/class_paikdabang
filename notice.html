@@ -439,13 +439,13 @@
                 let target = $(this).text();
                 if(target=='소식'){
                     $('.sub-top .txt').load('notice.txt #notice01');
-                    // $('#sub-bottom-inner').load('menu.txt #menu-content01');
+                    $('#sub-bottom-inner').load('notice.txt .table01');
                 }else if(target=='이벤트'){
                     $('.sub-top .txt').load('notice.txt #notice02');
-                    // $('#sub-bottom-inner').load('menu.txt #menu-content02');
+                    $('#sub-bottom-inner').load('notice.txt .table02');
                 }else if(target=='친절 우수매장' || target=='친절우수매장'){
                     $('.sub-top .txt').load('notice.txt #notice03');
-                    // $('#sub-bottom-inner').load('menu.txt #menu-content03');
+                    $('#sub-bottom-inner').load('notice.txt .table03');
                 }                                 
             }
         })  
